@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 40px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+.button1 {
+  background-color:   #e43112;
+  border: none;
+  color: white;
+  padding: 60px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+ float:l
+
+}
+.button2 {
+  background-color: #696969;
+  border: black;
+  color: white;
+  padding: 60px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+ float:l
+
+}
+
+
+
+
+ .button {width: 10%;}
+ .button1 {width: 40%;}
+ .button2 {width: 25%;}
+  .button {border-radius: 12px;}
+  .button1 {border-radius: 12px;}
+  .button2 {border-radius: 12px;}
+
+
+ body {
+        text-align: center;
+        font-family: "Trebuchet MS", Arial;
+      }
+      table {
+        border-collapse: collapse;
+        width:90%;
+        margin-left:auto;
+        margin-right:auto;
+      }
+      th {
+        padding: 16px;
+        background-color: #0043af;
+        color: white;
+      }
+      tr {
+        border: 1px solid #ddd;
+        padding: 16px;
+      }
+      tr:hover {
+        background-color: #bcbcbc;
+      }
+      td {
+        border: none;
+        padding: 16px;
+      }
+      .sensor {
+        color:white;
+        font-weight: bold;
+        background-color: #bcbcbc;
+        padding: 8px;
+      }
+</style>
+<body>
+
+
+<div class="btn-group">
+  <a href="/settings" class="button2 ">SETTINGS</a>
+  <a href="/" class="button2 ">CURRENT CONDITIONS</a>
+  <a href="/zonecontrol" class="button2 ">ZONE CONTROL</a>
+ 
+</div>
+
+ <table>
+      <tr>
+        <th>SENSOR</th>
+        <th>VALUE 1</th>
+        <th>VALUE 2</th>
+        <th>VALUE 3</th>
+      </tr>
+      <tr>
+        <td><span class="sensor">ZONE STATUS</span></td>
+         <td><span id="zoneStat1">OFF</span></td>
+        <td><span id="zoneStat2">OFF</span></td>
+        <td><span id="zoneStat3">OFF</span></td>
+      </tr>
+      <tr>
+        <td><span class="sensor">Zone 1 Timer</span></td>
+          <td><span id="Z1A">ON</span></td>
+        <td><span id="Z1D">0</span> mins</td>
+        <td><span id="Z1T">8 am</span></td>
+      </tr>
+      <tr>
+        <td><span class="sensor">Zone 2 Timer</span></td>
+          <td><span id="Z2A">ON</span></td>
+        <td><span id="Z2D">0</span> mins</td>
+        <td><span id="Z2T">8 am</span></td>
+      </tr>
+      <tr>
+        <td><span class="sensor">Zone 3 Timer</span></td>
+             <td><span id="Z3A">ON</span></td>
+        <td><span id="Z3D">0</span> mins</td>
+        <td><span id="Z3T">8 am</span></td>
+      </tr>
+      <tr>
+        <td><span class="sensor"  >Soil Moisture(Sensors)</span></td>
+        <td><span id="Sens1">0</span>%</td>
+        <td><span id="Sens2">0</span>%</td>
+        <td><span id="Sens3">0</span>%</td>
+      </tr>
+      <tr>
+        <td><span class="sensor"  >Soil Moisture(Zones)</span></td>
+        <td><span id="SenZ1">0</span>%</td>
+        <td><span id="SenZ2">0</span>%</td>
+        <td><span id="SenZ3">0</span>%</td>
+      </tr>
+        <tr>
+        <td><span class="sensor"  >Moisture Set Points</span></td>
+        <td><span id="MS1">0</span>%</td>
+        <td><span id="MS2">0</span>%</td>
+        <td><span id="MS3">0</span>%</td>
+      </tr>
+      <tr>
+        <td><span class="sensor"  >Daylight</span></td>
+        <td>Now: <span id="DayN">0</span>%</td>
+        <td>Today: <span id="DayT">0</span>hrs</td>
+        <td>Avge: <span id="DayA">0</span>hrs</td>
+      </tr>
+      <tr>
+        <td><span class="sensor"  >Growing Days</span></td>
+        <td>Today: <span id="GDD1">0</span> GDU's</td>
+        <td>Yesterday: <span id="GDD2">0</span> GDU's</td>
+        <td>Year: <span id="GDD3">0</span> GDU's</td>
+      </tr>
+        <tr>
+        <td><span class="sensor"  >Rain Chance</span></td>
+        <td>Now: <span id="precipnow">0</span> %</td>
+        <td>1-6 Hrs: <span id="precip6">0</span> %</td>
+        <td>6-12 Hrs: <span id="precip12">0</span> %</td>
+      </tr>
+      <tr>
+        <td><span class="sensor"  >Connection Info</span></td>
+        <td>Restarts: <span id="TimeReset">0</span></td>
+        <td>Time Offline: <span id="TimeOffline">0</span> Secs</td>
+        <td> <span id="LastUpdate">1:10:16:15</span></td>
+        </td>
+      </tr>
+     
+    </table>
+<a href="/DownloadData?Download=Data.csv" class="button " >DOWNLOAD GARDEN DATA</a>
+<a  href="/DownloadSettings?Download=Settings.csv" class="button ">DOWNLOAD SETTINGS</a>
+</div>
+
+<script>
+//////////////////////////////////////////////////////////////
+
+ function GetReadings() {
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myArr = JSON.parse(this.responseText);
+    document.getElementById("zoneStat1").innerHTML = myArr[0];
+    document.getElementById("zoneStat2").innerHTML = myArr[1];
+    document.getElementById("zoneStat3").innerHTML = myArr[2];
+    document.getElementById("Z1A").innerHTML = myArr[3];
+    document.getElementById("Z1D").innerHTML = myArr[4];
+    document.getElementById("Z1T").innerHTML = myArr[5];
+    document.getElementById("Z2A").innerHTML = myArr[6];
+    document.getElementById("Z2D").innerHTML = myArr[7];
+    document.getElementById("Z2T").innerHTML = myArr[8];
+    document.getElementById("Z3A").innerHTML = myArr[9];
+    document.getElementById("Z3D").innerHTML = myArr[10];
+    document.getElementById("Z3T").innerHTML = myArr[11];
+    document.getElementById("Sens1").innerHTML = myArr[12];
+    document.getElementById("Sens2").innerHTML = myArr[13];
+    document.getElementById("Sens3").innerHTML = myArr[14];
+    document.getElementById("SenZ1").innerHTML = myArr[15];
+    document.getElementById("SenZ2").innerHTML = myArr[16];
+    document.getElementById("SenZ3").innerHTML = myArr[17];
+    document.getElementById("MS1").innerHTML = myArr[18];
+    document.getElementById("MS2").innerHTML = myArr[19];
+    document.getElementById("MS3").innerHTML = myArr[20];
+    document.getElementById("DayN").innerHTML = myArr[21];
+    document.getElementById("DayT").innerHTML = myArr[22];
+    document.getElementById("DayA").innerHTML = myArr[23];
+    document.getElementById("GDD1").innerHTML = myArr[24];
+    document.getElementById("GDD2").innerHTML = myArr[25];
+    document.getElementById("GDD3").innerHTML = myArr[26];
+    document.getElementById("precipnow").innerHTML = myArr[27];
+    document.getElementById("precip6").innerHTML = myArr[28];
+    document.getElementById("precip12").innerHTML = myArr[29];  
+    document.getElementById("TimeReset").innerHTML = myArr[30];
+    document.getElementById("TimeOffline").innerHTML = myArr[31];
+    document.getElementById("LastUpdate").innerHTML = myArr[32];
+    
+  }
+}
+
+
+xmlhttp.open("GET","statusRead", true);
+xmlhttp.send();
+ }
+ 
+
+      setInterval(function() {
+  // Call a function repetatively with 2 Second interval
+  GetReadings();
+}, 2000); //2000mSeconds update rate
+////////////////////////////////////////////////////////////
+</script>
+</body>
+</html>
+

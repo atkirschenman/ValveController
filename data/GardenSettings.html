@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.button {
+  background-color: #2d9731f8;
+  border: none;
+  color: white;
+  padding: 60px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+.button1 {
+  background-color:   #FF6347;
+  border: none;
+  color: white;
+  padding: 60px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+ float:l
+
+}
+.button2 {
+  background-color: #696969;
+  border: black;
+  color: white;
+  padding: 60px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+ float:l
+
+}
+.slidecontainer {
+  width: 100%;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+ .button {width: 40%;}
+ .button1 {width: 40%;}
+ .button2 {width: 25%;}
+  .button {border-radius: 12px;}
+  .button1 {border-radius: 12px;}
+  .button2 {border-radius: 12px;}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+  background-color: #2196F3;
+  padding: px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.grid-item2 {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+ grid-column: 2 /span 2 ;
+}
+</style>
+<body>
+
+
+<div class="btn-group">
+  <a href="/settings" class="button2 ">SETTINGS</a>
+  <a href="/" class="button2 ">CURRENT CONDITIONS</a>
+  <a href="/zonecontrol" class="button2 ">ZONE CONTROL</a>
+</div>
+
+<p style="clear:both"><br></p>
+
+<div class="grid-container">
+  <div class="grid-item">Zone 1 Timer</div>
+  <div class="grid-item">
+    <button  class="button" onclick="Z1A(1)" >ACTIVATE</button>
+  </div>
+  <div class="grid-item">
+   <button  class="button1" onclick="Z1A(0)">DEACTIVATE</button>
+  </div>
+  <div class="grid-item">Zone 1 Duration</div>
+  <div class="grid-item2">
+    <div class="slidecontainer">
+  <input type="range" min="1" max="50" value="0" class="slider" id="myRange" >
+  <p>Value: <span id="demo"></span> mins</p>
+  </div>
+  </div>
+  <div class="grid-item">Zone 1 Water Time</div>  
+  <div class="grid-item2">
+  <div class="slidecontainer">
+  <input type="range" min="0" max="24" value="0" class="slider" id="myRange2">
+  <p>Value: <span id="demo2"></span></p>
+  </div>
+  </div>
+  
+  <div class="grid-item">Zone 2 Timer</div>
+  <div class="grid-item">
+    <button  class="button" onclick="Z2A(1)">ACTIVATE</button>
+  </div>
+  <div class="grid-item">
+   <button  class="button1" onclick="Z2A(0)">DEACTIVATE</button>
+  </div>
+  <div class="grid-item">Zone 2 Duration</div>
+  <div class="grid-item2">
+    <div class="slidecontainer">
+  <input type="range" min="1" max="50" value="0" class="slider" id="myRange3">
+  <p>Value: <span id="demo3"></span>Mins</p>
+  </div>
+  </div>
+  <div class="grid-item">Zone 2 Water Time</div>  
+  <div class="grid-item2">
+  <div class="slidecontainer">
+  <input type="range" min="0" max="24" value="0" class="slider" id="myRange4">
+  <p>Value: <span id="demo4"></span></p>
+  </div>
+  </div>
+  
+  <div class="grid-item">Zone 3 Timer</div>
+  <div class="grid-item">
+    <button  class="button" onclick="Z3A(1)">ACTIVATE</button>
+  </div>
+  <div class="grid-item">
+   <button  class="button1" onclick="Z3A(0)">DEACTIVATE</button>
+  </div>
+  <div class="grid-item">Zone 3 Duration</div>
+  <div class="grid-item2">
+    <div class="slidecontainer">
+  <input type="range" min="1" max="50" value="0" class="slider" id="myRange5">
+  <p>Value: <span id="demo5"></span>Mins</p>
+  </div>
+  </div>
+  <div class="grid-item">Zone 3 Water Time</div>  
+  <div class="grid-item2">
+  <div class="slidecontainer">
+  <input type="range" min="0" max="24" value="0" class="slider" id="myRange6">
+  <p>Value: <span id="demo6"></span></p>
+  </div>
+  </div>
+  <div class="grid-item">Zone 1 Sensing</div>  
+  <div class="grid-item2">
+  <input class="switch" type="checkbox"  id="z1s1" onclick="Zone1Sense()">Sensor1
+  <input class="switch" type="checkbox"  id="z1s2" onclick="Zone1Sense()">Sensor2
+   <input class="switch" type="checkbox"  id="z1s3" onclick="Zone1Sense()">Sensor3
+  </div>
+    <div class="grid-item">Zone 2 Sensing</div>  
+  <div class="grid-item2">
+  <input class="switch" type="checkbox"  id="z2s1" onclick="Zone2Sense()">Sensor1
+  <input class="switch" type="checkbox"  id="z2s2" onclick="Zone2Sense()">Sensor2
+   <input class="switch" type="checkbox"  id="z2s3" onclick="Zone2Sense()">Sensor3
+  </div>
+    <div class="grid-item">Zone 3 Sensing</div>  
+  <div class="grid-item2">
+  <input class="switch" type="checkbox"  id="z3s1" onclick="Zone3Sense()">Sensor1
+  <input class="switch" type="checkbox"  id="z3s2" onclick="Zone3Sense()">Sensor2
+   <input class="switch" type="checkbox"  id="z3s3" onclick="Zone3Sense()">Sensor3
+  </div>
+<div class="grid-item">Zone 1 Water %</div>  
+  <div class="grid-item2">
+  <div class="slidecontainer">
+  <input type="range" min="0" max="100" value="0" class="slider" id="myRange7">
+  <p>Value: <span id="demo7"></span>%</p>
+  </div>
+   </div>
+  <div class="grid-item">Zone 2 Water %</div>
+  <div class="grid-item2">
+  <div class="slidecontainer">
+  <input type="range" min="0" max="100" value="0" class="slider" id="myRange8">
+  <p>Value: <span id="demo8"></span>%</p>
+  </div>
+   </div>
+   <div class="grid-item">Zone 3 Water %</div>  
+  <div class="grid-item2">
+  <div class="slidecontainer">
+  <input type="range" min="0" max="100" value="0" class="slider" id="myRange9">
+  <p>Value: <span id="demo9"></span>%</p>
+  </div>
+  </div>
+</div>
+
+<script>
+///////////////////////////////////////////////////////////////
+
+function Zone1Sense() {
+  var checkBox1 = document.getElementById("z1s1");
+  var checkBox2 = document.getElementById("z1s2");
+  var checkBox3 = document.getElementById("z1s3");
+  var NUM = 0;
+  var xhttp = new XMLHttpRequest();
+  if (checkBox1.checked == true){
+    NUM = 100;
+  } 
+    if (checkBox2.checked == true){
+    NUM += 10;
+  } 
+    if (checkBox3.checked == true){
+    NUM += 1;
+  } 
+  
+   xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("z1s1").innerHTML =
+      this.responseText;
+    }
+  };
+    xhttp.open("GET", "Z1S?Z1Sfunc="+NUM, true);
+  xhttp.send();
+}
+
+function Zone2Sense() {
+  var checkBox1 = document.getElementById("z2s1");
+  var checkBox2 = document.getElementById("z2s2");
+  var checkBox3 = document.getElementById("z2s3");
+  var xhttp = new XMLHttpRequest();
+  var NUM =0;
+  if (checkBox1.checked == true){
+    NUM = 100;
+  } 
+    if (checkBox2.checked == true){
+    NUM += 10;
+  } 
+    if (checkBox3.checked == true){
+    NUM += 1;
+  
+  } 
+    xhttp.open("GET", "Z2S?Z2Sfunc="+NUM, true);
+  xhttp.send();
+}
+
+function Zone3Sense() {
+  var checkBox1 = document.getElementById("z3s1");
+  var checkBox2 = document.getElementById("z3s2");
+  var checkBox3 = document.getElementById("z3s3");
+  var xhttp = new XMLHttpRequest();
+  var NUM=0;
+  if (checkBox1.checked == true){
+    NUM = 100;
+  } 
+    if (checkBox2.checked == true){
+    NUM += 10;
+  } 
+    if (checkBox3.checked == true){
+    NUM += 1;
+  
+  } 
+    xhttp.open("GET", "Z3S?Z3Sfunc="+NUM, true);
+  xhttp.send();
+}
+
+///////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+var slider1 = document.getElementById("myRange");
+var slider2 = document.getElementById("myRange2");
+var output1 = document.getElementById("demo");
+var output2 = document.getElementById("demo2");
+output1.innerHTML = slider1.value;
+output2.innerHTML = slider2.value;
+var slider3 = document.getElementById("myRange3");
+var slider4 = document.getElementById("myRange4");
+var output3 = document.getElementById("demo3");
+var output4 = document.getElementById("demo4");
+output3.innerHTML = slider3.value;
+output4.innerHTML = slider4.value;
+var slider5 = document.getElementById("myRange5");
+var slider6 = document.getElementById("myRange6");
+var output5 = document.getElementById("demo5");
+var output6 = document.getElementById("demo6");
+output5.innerHTML = slider5.value;
+output6.innerHTML = slider6.value;
+var slider7 = document.getElementById("myRange7");
+var slider8 = document.getElementById("myRange8");
+var slider9 = document.getElementById("myRange9");
+var output7 = document.getElementById("demo7");
+var output8 = document.getElementById("demo8");
+var output9 = document.getElementById("demo9");
+output7.innerHTML = slider7.value;
+output8.innerHTML = slider8.value;
+output9.innerHTML = slider9.value;
+//const myHandler = (event) => // do something with the event
+//const dHandler = debounced(200, myHandler);
+//slider.addEventListener("input", dHandler);
+
+slider1.oninput = function() {output1.innerHTML = this.value;}
+slider1.onmouseup = function() {output1.innerHTML = this.value; Z1D(output1.innerHTML);}
+slider1.ontouchend = function() {output1.innerHTML = this.value; Z1D(output1.innerHTML);}
+slider2.oninput = function() {output2.innerHTML = this.value;}
+slider2.onmouseup = function() {output2.innerHTML = this.value; Z1W(output2.innerHTML);}
+slider2.ontouchend = function() {output2.innerHTML = this.value; Z1W(output2.innerHTML);}
+slider3.oninput = function() {output3.innerHTML = this.value;}
+slider3.onmouseup = function() {output3.innerHTML = this.value; Z2D(output3.innerHTML);}
+slider3.ontouchend = function() {output3.innerHTML = this.value; Z2D(output3.innerHTML);}
+slider4.oninput = function() {output4.innerHTML = this.value;}
+slider4.onmouseup = function() {output4.innerHTML = this.value; Z2W(output4.innerHTML);}
+slider4.ontouchend = function() {output4.innerHTML = this.value; Z2W(output4.innerHTML);}
+slider5.oninput = function() {output5.innerHTML = this.value;}
+slider5.onmouseup = function() {output5.innerHTML = this.value; Z3D(output5.innerHTML);}
+slider5.ontouchend = function() {output5.innerHTML = this.value; Z3D(output5.innerHTML);}
+slider6.oninput = function() {output6.innerHTML = this.value;}
+slider6.onmouseup = function() {output6.innerHTML = this.value; Z3W(output6.innerHTML);}
+slider6.ontouchend = function() {output6.innerHTML = this.value; Z3W(output6.innerHTML);}
+slider7.oninput = function() {output7.innerHTML = this.value;}
+slider7.onmouseup = function() {output7.innerHTML = this.value; Z1P(output7.innerHTML);}
+slider7.ontouchend = function() {output7.innerHTML = this.value; Z1P(output7.innerHTML);}
+slider8.oninput = function() {output8.innerHTML = this.value;}
+slider8.onmouseup = function() {output8.innerHTML = this.value; Z2P(output8.innerHTML);}
+slider8.ontouchend = function() {output8.innerHTML = this.value; Z2P(output8.innerHTML);}
+slider9.oninput = function() {output9.innerHTML = this.value;}
+slider9.onmouseup = function() {output9.innerHTML = this.value; Z3P(output9.innerHTML);}
+slider9.ontouchend = function() {output9.innerHTML = this.value; Z3P(output9.innerHTML);}
+
+
+function Z1P(mins) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("myRange7").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "Z1Pfunction?Z1Pfunc="+mins, true);
+  xhttp.send();
+}
+
+function Z2P(mins) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("myRange8").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "Z2Pfunction?Z2Pfunc="+mins, true);
+  xhttp.send();
+}
+
+function Z3P(mins) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("myRange9").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "Z3Pfunction?Z3Pfunc="+mins, true);
+  xhttp.send();
+}
+
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+
+
+
+
+function Z1D(mins) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "Z1Dfunction?Z1Dfunc="+mins, true);
+  xhttp.send();
+}
+
+
+
+function Z1W(mins) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("myRange2").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "Z1Wfunction?Z1Wfunc="+mins, true);
+  xhttp.send();
+}
+
+
+function Z1A(led) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("Z1Astate").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "setZ1A?Z1Astate="+led, true);
+  xhttp.send();
+}
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+function Z2D(mins) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("myRange3").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "Z2Dfunction?Z2Dfunc="+mins, true);
+  xhttp.send();
+}
+
+
+
+function Z2W(mins) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("myRange4").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "Z2Wfunction?Z2Wfunc="+mins, true);
+  xhttp.send();
+}
+
+
+function Z2A(led) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("Z2Astate").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "setZ2A?Z2Astate="+led, true);
+  xhttp.send();
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+function Z3D(mins) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("myRange5").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "Z3Dfunction?Z3Dfunc="+mins, true);
+  xhttp.send();
+}
+
+
+
+function Z3W(mins) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("myRange6").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "Z3Wfunction?Z3Wfunc="+mins, true);
+  xhttp.send();
+}
+
+
+function Z3A(led) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("Z3Astate3").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "setZ3A?Z3Astate="+led, true);
+  xhttp.send();
+}
+////////////////////////////////////////////////////////////
+</script>
+</body>
+</html>
+
