@@ -7,9 +7,7 @@
 #include <SD.h> 
 #include <SPI.h>
 #include <ESP8266HTTPClient.h>
-#include <SD.h> 
-#include <SPI.h>
-#include <Wire.h> 
+#include <Wire.h>   
 #include "FS.h"
 #include <DS3231.h>
 #include <Adafruit_MCP23017.h>
@@ -134,7 +132,7 @@ void handleRoot();
 void handlesettings();
 void handlezonecontrol();
 void handleZ1D();
-void handleZ1A();
+void handleZ1A(); 
 void handleZ1W();
 void handleZ2D();
 void handleZ2A();
